@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Reflection;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Json;
-using System.Diagnostics;
 using System.ComponentModel;
-using System.Linq;
+using System.Diagnostics;
+using System.IO;
 using System.Linq.Expressions;
+using System.Reflection;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
-using System.ServiceModel;
 
 namespace Tomochan154.Configuration
 {
