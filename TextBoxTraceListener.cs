@@ -151,7 +151,7 @@ namespace Tomochan154.Debugging
 
             if ((this.TraceOutputOptions & TraceOptions.DateTime) != 0)
             {
-                buffer.AppendLine(indent + "DateTime" + eventCache.DateTime.ToString("o", CultureInfo.InvariantCulture));
+                buffer.AppendLine(indent + "DateTime" + eventCache.DateTime.ToString("o", CultureInfo.CurrentCulture));
             }
 
             if ((this.TraceOutputOptions & TraceOptions.Callstack) != 0)
@@ -173,11 +173,11 @@ namespace Tomochan154.Debugging
         {
             if (this.TraceOutputOptions == TraceOptions.None)
             {
-                return string.Format(CultureInfo.InvariantCulture, this.DatetimeFormat + "  {1}: {2} : {3}", eventCache.DateTime, eventType.ToString(), id.ToString(CultureInfo.InvariantCulture), message);
+                return string.Format(CultureInfo.CurrentCulture, this.DatetimeFormat + "  {1}: {2} : {3}", eventCache.DateTime, eventType.ToString(), id.ToString(CultureInfo.CurrentCulture), message);
             }
             else
             {
-                return string.Format(CultureInfo.InvariantCulture, this.DatetimeFormat + "  {1}: {2} : {3}", eventCache.DateTime, eventType.ToString(), id.ToString(CultureInfo.InvariantCulture), message) + Environment.NewLine + CreateOptionString(eventCache);
+                return string.Format(CultureInfo.CurrentCulture, this.DatetimeFormat + "  {1}: {2} : {3}", eventCache.DateTime, eventType.ToString(), id.ToString(CultureInfo.CurrentCulture), message) + Environment.NewLine + CreateOptionString(eventCache);
             }
         }
 
@@ -220,7 +220,7 @@ namespace Tomochan154.Debugging
         {
             if (args != null)
             {
-                return CreateMessage(eventCache, source, eventType, id, string.Format(CultureInfo.InvariantCulture, format, args));
+                return CreateMessage(eventCache, source, eventType, id, string.Format(CultureInfo.CurrentCulture, format, args));
             }
             else
             {
